@@ -1,0 +1,19 @@
+<div class="login-container">
+  <img class="film" src="assets/images/film.png"/>
+  <div class="logo">Rotten Potatoes</div>
+  <div class="desc">Potato Rotten is a protagonist who, like many young children, is both grimy and adorable... Clanton uses colored pencils and potato stamps to create the illustrations and potatoes full of character... Buy Now ! Rotten Potato and her brother may be little potatoes.</div>
+  <div class="login-form">
+    <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text" name="username" class="form-control" [(ngModel)]="username" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="pword" class="form-control" [(ngModel)]="password"/>
+    </div>
+    <div class="btn-container">
+        <div class="error">{{errMess}}</div>
+        <button (click)="handleClick()" class="btn btn-dark">Login</button>
+    </div>
+  </div>
+</div>
