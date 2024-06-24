@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +15,15 @@ export class HeaderComponent {
    goToHome(){
        this.router.navigate(['home']);
    }
+   logout() {
+    this.auth.signOut().then(() => {
+      console.log('User signed out successfully');
+      this.router.navigate(['/login']);
+    }).catch((error) => {
+      console.error('Error signing out:', error);
+      // Optionally display an error message to the user
+    });
+  }
 
-   logout(){
-      this.auth.logout();
-   }
+  
 }
